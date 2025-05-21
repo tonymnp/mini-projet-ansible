@@ -35,11 +35,11 @@
       - docker-compose-plugin
     state: latest
 
-- name: start docker
-  service:
-    name: docker
-    state: started
-    enabled: yes
+#- name: start docker
+ # service:
+  #  name: docker
+   # state: started
+ #   enabled: yes
 
 - name: install docker-compose
   get_url:
