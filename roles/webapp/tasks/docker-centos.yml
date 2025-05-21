@@ -18,11 +18,12 @@
   yum_repository:
     name: docker
     baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+    description: Docker CE Stable Repository
     enabled: yes
 
 - name: add gpg key
   rpm_key:
-    key: https//download.docker.com/linux/centos/gpg
+    key: https://download.docker.com/linux/centos/gpg
     state: present
 
 - name: install docker
@@ -34,11 +35,11 @@
       - docker-compose-plugin
     state: latest
 
-- name: start docker
-  service:
-    name: docker
-    state: started
-    enabled: yes
+#- name: start docker
+ # service:
+  #  name: docker
+   # state: started
+ #   enabled: yes
 
 - name: install docker-compose
   get_url:
@@ -48,7 +49,7 @@
 
 - name: add user to docker group
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ ansible_user | default('monpi') }}""
     groups: docker
     append: yes
   notify: restart docker
