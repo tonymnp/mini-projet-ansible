@@ -95,4 +95,4 @@ Gestion fine des variables d’environnement
 Préparation à la publication sur Ansible Galaxy
 
 📦 Publication
-Le rôle est prêt à être versionné et partagé via un dépôt GitHub ou une Ansible Galaxy privée.
+Le rôle est prêt à être versionné et partagé via un dépôt GitHub ou une Ansible Galaxy privée. 
